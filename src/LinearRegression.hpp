@@ -8,8 +8,6 @@
 
 namespace bombar
 {
-
-
     typedef std::vector<double*> Table;
 
     struct HFunction

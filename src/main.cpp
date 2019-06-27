@@ -1,16 +1,15 @@
 #include <iostream>
 #include "LinearRegression.hpp"
+#include "NeuralNetwork.hpp"
 
 using namespace std;
 using namespace bombar;
 
-int main()
+void testLinearRegression()
 {
-    cout << "Linear Regression Example" << endl;
+    cout << "Linear Regression Testing" << endl;
 
     Table dataset;
-    size_t n = 100;
-    double** doo = new double*[4];
 
     double datas[][2] = {{0, 0}, {1.4, 3}, {6.2, 7}, {9.52, 12.1}};
 
@@ -19,14 +18,33 @@ int main()
     
     LinearRegression reg(dataset);
 
-    cout << "Initialized at zero: \t";
+    cout << "Initial          \t: ";
     reg.printHFunc();
     reg.fit(GRADIENT_DESCENT);
 
-    cout << "Gradient Descent: \t";
+    cout << "Gradient Descent  \t: ";
     reg.printHFunc();
     reg.fit(LEAST_SQUARES);
 
-    cout << "Least Squares:   \t";
-    reg.printHFunc();   
+    cout << "Least Squares      \t: ";
+    reg.printHFunc();
+
+    cout << endl << endl;
+}
+
+int main()
+{
+    // testLinearRegression();
+
+    vector<matrix> vec;
+    matrix input(4, 1);
+    matrix output(2, 1);
+
+    cout << "lol" << endl;
+
+    BasicNeuralNet net(4, 2);
+
+    net.run(input, output);
+
+    // output.print();
 }
